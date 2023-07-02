@@ -5,4 +5,4 @@ sudo docker remove Id
 # para correr mysql docker
 sudo docker run -d -p 3306:3306 --name mysql-db  -e MYSQL_ROOT_PASSWORD=Pass1234* --mount src=mysql-db-data,dst=/var/lib/mysql mysql
 # para correr el composer
-docker-compose up --build --force-recreate
+sudo docker-compose up --build --force-recreate
