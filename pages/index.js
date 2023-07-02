@@ -26,7 +26,7 @@ export default function Home() {
       },
     });
     const data2 = await response.json();
-    const newData = data2.filter((item) => !data.some((dataItem) => dataItem.id_clientes === item.id_clientes));
+    const newData = data2.filter((item) => !data.some((dataItem) => dataItem.id === item.id));
     if(newData.length>0){
       if(seconds % 60 === 0){
         setDatosMin(0)
@@ -71,16 +71,16 @@ export default function Home() {
               <table className='all_witdh'>
                 <thead className='encabezado'>
                   <tr>
+                    <th>Id</th>
                     <th>Nombre</th>
-                    <th>apellido</th>
                   </tr>
                 </thead>
                 <tbody>
                   {data.map((item) => {
                     return (
-                      <tr key={item.id_clientes}>
+                      <tr key={item.id}>
+                        <td>{item.id}</td>
                         <td>{item.nombre}</td>
-                        <td>{item.apellido}</td>
                       </tr>
                     )
                   })}
