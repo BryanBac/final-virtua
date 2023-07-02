@@ -7,5 +7,6 @@ services:
     ports:
       - 5050:5050
     volumes:
-      - ./src:/app/src
+      - ./pages:/app/pages
       - ./public:/app/public
+      - ./styles:/app/styles
