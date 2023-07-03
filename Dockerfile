@@ -1,10 +1,17 @@
 FROM node:18
 
+RUN mkdir -p /app
+
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package.json /app
+
 RUN yarn install
 
-COPY next.config.js ./next.config.js
+COPY . /app
+
+RUN yarn build
+
 EXPOSE 3000
-CMD ["yarn", "dev"]
+
+CMD [ "yarn", "start" ]
